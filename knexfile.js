@@ -1,34 +1,33 @@
-const pgConnection = process.env.DATABASE_URL || "postgresql://postgres@locathost/api/events"
+const pgConnection =
+  process.env.DATABASE_URL || "postgresql://postgres@localhost/api/events";
 
 module.exports = {
-
   development: {
-    client: 'sqlite3',
+    client: "sqlite3",
     useNullAsDefault: true,
     connection: {
-      filename: './data/potluck.db3'
+      filename: "./data/potluck.db3",
     },
     migrations: {
-      directory: "./data/migrations"
+      directory: "./data/migrations",
     },
     seeds: {
-      directory: "./data/seeds"
-    }
+      directory: "./data/seeds",
+    },
   },
 
   production: {
-    client: 'pg',
+    client: "pg",
     connection: pgConnection,
     pool: {
       min: 2,
-      max: 10
+      max: 10,
     },
     migrations: {
-      directory: "./data/migrations"
+      directory: "./data/migrations",
     },
     seeds: {
-      directory: "./data/seeds"
-    }
-  }
-
+      directory: "./data/seeds",
+    },
+  },
 };
