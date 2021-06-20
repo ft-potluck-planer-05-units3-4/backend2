@@ -6,13 +6,13 @@ module.exports = {
     client: "sqlite3",
     useNullAsDefault: true,
     connection: {
-      filename: "./data/potluck.db3",
+      filename: "./api/data/potluck.db3",
     },
     migrations: {
-      directory: "./data/migrations",
+      directory: "./api/data/migrations",
     },
     seeds: {
-      directory: "./data/seeds",
+      directory: "./api/data/seeds",
     },
   },
 
@@ -24,10 +24,10 @@ module.exports = {
       max: 10,
     },
     migrations: {
-      directory: "./data/migrations",
+      directory: "./api/data/migrations",
     },
     seeds: {
-      directory: "./data/seeds",
+      directory: "./api/data/seeds",
     },
   },
 };
