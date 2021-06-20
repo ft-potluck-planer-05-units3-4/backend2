@@ -2,10 +2,10 @@ const cors = require("cors");
 const helmet = require("helmet");
 
 const express = require("express");
-const authRouter = require("../auth/auth-router");
-const eventRouter = require("../events/events-router");
+const authRouter = require("./auth/auth-router");
+const eventRouter = require("./events/events-router");
 const userRouter = require("./users/users-router");
-const foodRouter = require("../food/food-router");
+const foodRouter = require("./food/food-router");
 //other routes here
 
 const server = express();
