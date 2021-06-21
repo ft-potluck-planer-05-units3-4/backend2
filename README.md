@@ -2,7 +2,7 @@
 
 Hosted Backend URL: https://potluck-planner1.herokuapp.com/
 
-Endpoints with an (auth) require an authorization token like so:
+Endpoints that require an authorization token:
 
 Headers:
 | Key | Value |
