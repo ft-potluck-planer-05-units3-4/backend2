@@ -33,10 +33,9 @@ exports.seed = function (knex) {
         },
         {
           id: 5,
-          name: "Luca",
-          username: "luca29",
-          password:
-            "$2a$10$pdnkbNCSC6.h5PBxSdYk3uYZRB4s9r.0f9GMh193EG2oDzuzbZdxu",
+          name: "bob",
+          username: "bob",
+          password: "bob",
         },
       ]);
     });
