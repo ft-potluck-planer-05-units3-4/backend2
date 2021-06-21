@@ -11,10 +11,10 @@ Headers:
 
 ## Authentication
 
-| Method | Endpoint       | Requirements             |                                  |
-| ------ | -------------- | ------------------------ | -------------------------------- |
-| POST   | /auth/register | name, username, password | Creates a new user object        |
-| POST   | /auth/login    | username, password       | Logs in users who already exists |
+| Method | Endpoint       | Requirements             |                    |
+| ------ | -------------- | ------------------------ | ------------------ |
+| POST   | /auth/register | name, username, password | Creates a new user |
+| POST   | /auth/login    | username, password       | Logs in users      |
 
 ## Users
 
