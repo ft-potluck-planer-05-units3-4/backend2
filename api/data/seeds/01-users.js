@@ -7,29 +7,25 @@ exports.seed = function (knex) {
           id: 1,
           name: "Aldo",
           username: "aldo",
-          password:
-            "$2a$10$atZ61ga6YEgot.aEqJhFReD5xg34.QeZiG8oCq1zCObQy8PRW9AK2",
+          password: "aldo",
         },
         {
           id: 2,
           name: "Will",
           username: "will",
-          password:
-            "$2a$10$LXUFzYNKHNL9uixmvKtdEuNh8wtRroiBZvyM4SLksAdVo3gF0HRu.",
+          password: "will",
         },
         {
           id: 3,
           name: "Ethan",
           username: "ethan",
-          password:
-            "$2a$10$hDt3vfoTAkHcX6PBQ5/mZeRBx3ixdn8syHIisjjhVEYTMcsxia0XO",
+          password: "ethan",
         },
         {
           id: 4,
           name: "bryan",
           username: "bryan",
-          password:
-            "$2a$10$Gyg8xADW9qOa9bImYr0lwu/.TcvUG40AyHMJYjp1Xfr4Jn6JwSLp2",
+          password: "bryan",
         },
         {
           id: 5,
