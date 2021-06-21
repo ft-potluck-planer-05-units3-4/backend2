@@ -9,7 +9,7 @@ module.exports = function generateToken(user) {
   };
 
   const options = {
-    expiresIn: "1d",
+    expiresIn: "1w",
   };
 
   return jwt.sign(payload, config.jwtSecret, options);
