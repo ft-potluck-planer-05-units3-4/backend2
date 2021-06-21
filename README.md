@@ -7,7 +7,7 @@ Endpoints with an (auth) require an authorization token like so:
 Headers:
 | Key | Value |
 | :-- | :-- |
-| Authorization | <AUTH_TOKEN> |
+| Authorization | AUTH_TOKEN |
 
 ## Authentication
 
