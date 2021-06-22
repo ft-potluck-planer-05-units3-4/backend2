@@ -116,4 +116,34 @@ router.post("/:id/guests", validEventID, (req, res, next) => {
     .catch(next);
 });
 
+router.delete("/:id/guests", validEventID, (req, res, next) => {
+  const id = req.params.id;
+  const invite = req.body.userID;
+  Events.deleteInvited(id, invite)
+    .then((user) => {
+      res.status(201).json({
+        message: "User was deleted from event",
+      });
+    })
+    .catch(next);
+});
+
+// router.put("/:id/guests/:userid", validEventID, (req, res, next) => {
+//   const id = req.params.id;
+//   const changes = req.body;
+//   const userid = req.params.userid;
+//   Events.updateList(userid, changes)
+//     .then((change) => {
+//       if (change === 1) {
+//         Events.getInvited(id).then((success) => {
+//           res.status(200).json({
+//             message: `Event updated`,
+//             success,
+//           });
+//         });
+//       }
+//     })
+//     .catch(next);
+// });
+
 module.exports = router;
