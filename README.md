@@ -24,7 +24,7 @@ Headers:
 | GET    | /api/users/:id      |                       | Returns user object by id           |
 | DELETE | /api/users/:id      |                       | Deletes the user by id              |
 | GET    | /api/users/:id/rsvp |                       | see if user is a "rsvp person"      |
-| DELETE | /api/users/:id/rsvp | change rsvp to 1 or 0 | updates the user to a "rsvp person" |
+| PUT | /api/users/:id/rsvp | change rsvp to 1 or 0 | updates the user to a "rsvp person" |
 
 ## Events
 
