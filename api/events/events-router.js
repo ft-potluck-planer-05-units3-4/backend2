@@ -3,12 +3,16 @@ const router = express.Router();
 const Events = require("./events-model");
 const Users = require("../users/users-model");
 const restricted = require("../middleware/restricted-middleware");
-const { validEventID, validNewEvent } = require("../middleware/middleware");
+const {
+  validEventID,
+  validNewEvent,
+  validUserID,
+} = require("../middleware/middleware");
 
 router.use(restricted);
 
 //bringing in /api/events
-router.get("/users/:id", (req, res, next) => {
+router.get("/users/:id", validUserID, (req, res, next) => {
   const id = req.params.id;
   Promise.all([
     Events.getUserID(id),
