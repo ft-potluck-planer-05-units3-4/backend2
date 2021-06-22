@@ -54,4 +54,39 @@ router.delete("/:id", validUserID, (req, res, next) => {
     .catch(next);
 });
 
+router.get("/:id/rsvp", validUserID, (req, res, next) => {
+  const id = req.params.id;
+  Users.getInfo(id)
+    .then((info) => {
+      res.status(200).json(info);
+    })
+    .catch(next);
+});
+
+router.put("/:id/rsvp", validUserID, (req, res, next) => {
+  const id = req.params.id;
+  const changes = req.body;
+  Users.editInfo(id, changes)
+    .then((change) => {
+      if (change === 1) {
+        Users.getInfo(id).then((success) => {
+          res.status(200).json({
+            message: `User updated`,
+            success,
+          });
+        });
+      }
+    })
+    .catch(next);
+});
+
+// router.put("/:id/events", validUserID, (req, res, next) => {
+//   const id = req.params.id;
+//   Users.changeInfo(id)
+//     .then((info) => {
+//       res.status(200).json(info);
+//     })
+//     .catch(next);
+// });
+
 module.exports = router;

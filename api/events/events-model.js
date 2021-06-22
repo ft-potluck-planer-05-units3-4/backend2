@@ -10,6 +10,8 @@ module.exports = {
   getUserID,
   getInvited,
   addInvited,
+  deleteInvited,
+  // updateList,
 };
 
 function get() {
@@ -130,3 +132,11 @@ async function addInvited(id, friend) {
     .insert(friend);
   return newInvite;
 }
+
+function deleteInvited(id, friend) {
+  return db("events_friends").where({ eventsID: id, userID: friend }).delete();
+}
+
+// function updateList(id, changes) {
+//   return db("friends").where({ id }).update(changes);
+// }
