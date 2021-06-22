@@ -8,11 +8,11 @@ const { validEventID, validNewEvent } = require("../middleware/middleware");
 router.use(restricted);
 
 //bringing in /api/events
-router.get("/users/:id", validEventID, (req, res, next) => {
+router.get("/users/:id", (req, res, next) => {
   const id = req.params.id;
   Promise.all([
     Events.getUserID(id),
-    Users.getInvited(id),
+    Users.getInvited2(id),
     Events.getFoodList(id),
   ])
     .then(([organizedEvents, guestEvents, list]) => {
