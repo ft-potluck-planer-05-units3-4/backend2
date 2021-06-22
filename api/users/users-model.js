@@ -6,6 +6,7 @@ module.exports = {
   update,
   remove,
   getInvited,
+  getInvited2,
 };
 
 function get() {
@@ -42,5 +43,32 @@ function getInvited(id) {
     .join("friends as f", "f.userID", "=", "u.id")
     .join("events_friends as EF", "f.id", "=", "EF.userID")
     .join("events as e", "e.id", "=", "EF.eventsID")
-    .where("f.userID", id);
+    .where("EF.userID", id);
+}
+function getInvited2(id) {
+  return (
+    db
+      .select(
+        "f.RSVP",
+        "e.id",
+        "e.title",
+        "e.description",
+        "e.month",
+        "e.day",
+        "e.year",
+        "e.start_time",
+        "e.end_time",
+        "e.location",
+        "EF.eventsID"
+      )
+      // .from("users as u")
+      // .join("friends as f", "f.userID", "=", "u.id")
+      // .join("events_friends as EF", "f.id", "=", "EF.userID")
+      // .join("events as e", "e.id", "=", "EF.eventsID")
+      .from("events_friends as EF")
+      .join("events as e", "e.id", "=", "EF.eventsID")
+      .join("friends as f", "EF.userID", "=", "f.userID")
+      // .join("events_friends as EF", "EF.userID", "=", "e.id")
+      .where("EF.userID", id)
+  );
 }
