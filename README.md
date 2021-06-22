@@ -18,12 +18,13 @@ Headers:
 
 ## Users
 
-| Method | Endpoint       | Requirements                            |                           |
-| ------ | -------------- | --------------------------------------- | ------------------------- |
-| GET    | /api/users     |                                         | Returns all users         |
-| GET    | /api/users/:id |                                         | Returns user object by id |
-| PUT    | /api/users/:id | either name, username, password, or all | Updates the user by id    |
-| DELETE | /api/users/:id |                                         | Deletes the user by id    |
+| Method | Endpoint            | Requirements          |                                     |
+| ------ | ------------------- | --------------------- | ----------------------------------- | --- |
+| GET    | /api/users          |                       | Returns all users                   |
+| GET    | /api/users/:id      |                       | Returns user object by id           |
+| DELETE | /api/users/:id      |                       | Deletes the user by id              |
+| GET    | /api/users/:id/rsvp |                       | see if user is a "rsvp person"      |
+| DELETE | /api/users/:id/rsvp | change rsvp to 1 or 0 | updates the user to a "rsvp person" |     |
 
 ## Events
 
@@ -38,14 +39,15 @@ Headers:
 | POST   | /api/events/:id/guests | userID (of the user being added)                        | Add guest to event by id                                        |
 | PUT    | /api/events/:id        | title, location, month, day, year, start_time, end_time | Updates event by id                                             |
 | DELETE | /api/events/:id        |                                                         | Deletes event by id                                             |
+| DELETE | /api/events/:id/guests | userID (of the user being deleted)                      | Deletes guest from event by event id                            |
 
 ## Food
 
-| Method | Endpoint             | Requirements                                                          |                                  |
-| ------ | -------------------- | --------------------------------------------------------------------- | -------------------------------- |
-| GET    | /api/food            |                                                                       | Returns all food items           |
-| GET    | /api/events/:id/food |                                                                       | Returns all the food by event id |
-| GET    | /api/food/:id        |                                                                       | Returns food object by id        |
+| Method | Endpoint             | Requirements                                                                              |                                  |
+| ------ | -------------------- | ----------------------------------------------------------------------------------------- | -------------------------------- |
+| GET    | /api/food            |                                                                                           | Returns all food items           |
+| GET    | /api/events/:id/food |                                                                                           | Returns all the food by event id |
+| GET    | /api/food/:id        |                                                                                           | Returns food object by id        |
 | POST   | /api/food            | eventId, userID(of person bringing, optional), category, quantity, name (must be unique)  | Creates new food object          |
 | PUT    | /api/food/:id        | eventId, userID(of person bringing, optional), category, quantity , name (must be unique) | Updates the food by id           |
-| DELETE | /api/food/:id        |                                                                       | Deletes the food by id"          |
+| DELETE | /api/food/:id        |                                                                                           | Deletes the food by id"          |
