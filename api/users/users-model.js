@@ -83,6 +83,7 @@ function getInvited(id) {
     .join("events as e", "e.id", "=", "EF.eventsID")
     .where("EF.userID", id);
 }
+
 function getInvited2(id) {
   return (
     db

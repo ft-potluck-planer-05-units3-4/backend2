@@ -128,6 +128,17 @@ router.delete("/:id/guests/:user_id", validEventID, (req, res, next) => {
     .catch(next);
 });
 
+router.get("/:id/guests/:user_id", validEventID, (req, res, next) => {
+  const id = req.params.id;
+  const invite = req.params.user_id;
+  Events.getInvitedGuest(id, invite);
+  Users.getByID(invite)
+    .then((user) => {
+      res.status(201).json(user);
+    })
+    .catch(next);
+});
+
 // router.put("/:id/guests/:userid", validEventID, (req, res, next) => {
 //   const id = req.params.id;
 //   const changes = req.body;
