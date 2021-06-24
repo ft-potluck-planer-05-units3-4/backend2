@@ -26,20 +26,21 @@ Headers:
 | GET    | /api/users/:id/rsvp |                       | see if user is a "rsvp person"      |
 | PUT | /api/users/:id/rsvp | change rsvp to 1 or 0 | updates the user to a "rsvp person" |
 
+
 ## Events
 
-| Method | Endpoint               | Requirements                                            |                                                                 |
-| ------ | ---------------------- | ------------------------------------------------------- | --------------------------------------------------------------- |
-| GET    | /api/events            |                                                         | Returns all events                                              |
-| GET    | /api/events/users/:id  |                                                         | Returns all events related to user id, returns data of event id |
-| GET    | /api/events/:id        |                                                         | Returns event by id                                             |
-| GET    | /api/events/:id/food   |                                                         | Gets food for event id                                          |
-| GET    | /api/events/:id/guests |                                                         | Gets all guests by event id                                     |
-| POST   | /api/events            | title, location, month, day, year, start_time, end_time | Creates new event                                               |
-| POST   | /api/events/:id/guests | userID (of the user being added)                        | Add guest to event by id                                        |
-| PUT    | /api/events/:id        | title, location, month, day, year, start_time, end_time | Updates event by id                                             |
-| DELETE | /api/events/:id        |                                                         | Deletes event by id                                             |
-| DELETE | /api/events/:id/guests | userID (of the user being deleted)                      | Deletes guest from event by event id                            |
+| Method | Endpoint                        | Requirements                                            |                                                                 |
+| ------ | ------------------------------- | ------------------------------------------------------- | --------------------------------------------------------------- |
+| GET    | /api/events                     |                                                         | Returns all events                                              |
+| GET    | /api/events/users/:id           |                                                         | Returns all events related to user id, returns data of event id |
+| GET    | /api/events/:id                 |                                                         | Returns event by id                                             |
+| GET    | /api/events/:id/food            |                                                         | Gets food for event id                                          |
+| GET    | /api/events/:id/guests          |                                                         | Gets all guests by event id                                     |
+| POST   | /api/events                     | title, location, month, day, year, start_time, end_time | Creates new event                                               |
+| POST   | /api/events/:id/guests          | userID (of the user being added)                        | Add guest to event by id                                        |
+| PUT    | /api/events/:id                 | title, location, month, day, year, start_time, end_time | Updates event by id                                             |
+| DELETE | /api/events/:id                 |                                                         | Deletes event by id                                             |
+| DELETE | /api/events/:id/guests/:user_id |                                                         | Deletes guest from event by event id                            |
 
 ## Food
 
