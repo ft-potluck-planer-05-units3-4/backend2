@@ -116,9 +116,9 @@ router.post("/:id/guests", validEventID, (req, res, next) => {
     .catch(next);
 });
 
-router.delete("/:id/guests", validEventID, (req, res, next) => {
+router.delete("/:id/guests/:user_id", validEventID, (req, res, next) => {
   const id = req.params.id;
-  const invite = req.body.userID;
+  const invite = req.params.user_id;
   Events.deleteInvited(id, invite)
     .then((user) => {
       res.status(201).json({
