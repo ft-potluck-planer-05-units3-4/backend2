@@ -12,6 +12,7 @@ module.exports = {
   addInvited,
   deleteInvited,
   // updateList,
+  getInvitedGuest,
 };
 
 function get() {
@@ -124,6 +125,31 @@ function getInvited(id) {
     .join("events_friends as EF", "f.userID", "=", "EF.userID")
     .join("events as e", "e.id", "=", "EF.eventsID")
     .where({ eventsID: id });
+}
+
+function getInvitedGuest(id, friend) {
+  return db(
+    // .select(
+    //   "u.id",
+    //   "f.userID",
+    //   // "EF.eventsID",
+    //   "e.title",
+    //   "u.name",
+    //   "u.username",
+    //   "f.RSVP"
+    // )
+    // .from("friends as f")
+    // .join("users as u", "u.id", "=", "f.userID")
+    // .join("events_friends as EF", "f.userID", "=", "EF.userID")
+    // .join("events as e", "e.id", "=", "EF.eventsID")
+    // .where({ eventsID: id, userID: friend });
+    // .select("u.name", "u.username")
+    // .from("users as u")
+    // .join("events as e", "u.id", "=", "e.userID")
+    // .join("events_friends as EF", "e.userID", "=", "EF.userID")
+    // .where({ eventsID: id, userID: friend })
+    "events_friends"
+  ).where({ eventsID: id, userID: friend });
 }
 //POST /events/:id/invited
 async function addInvited(id, friend) {

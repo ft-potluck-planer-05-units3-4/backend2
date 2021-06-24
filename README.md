@@ -33,6 +33,7 @@ Headers:
 | ------ | ------------------------------- | ------------------------------------------------------- | --------------------------------------------------------------- |
 | GET    | /api/events                     |                                                         | Returns all events                                              |
 | GET    | /api/events/users/:id           |                                                         | Returns all events related to user id, returns data of event id |
+| GET    | /api/events/:id/guests/:user_id |                                                         | Gets user info by user id                                       |
 | GET    | /api/events/:id                 |                                                         | Returns event by id                                             |
 | GET    | /api/events/:id/food            |                                                         | Gets food for event id                                          |
 | GET    | /api/events/:id/guests          |                                                         | Gets all guests by event id                                     |
