@@ -1,6 +1,6 @@
 # Potluck Planner API
 
-Hosted Backend URL: https://potluck-planner1.herokuapp.com/
+Hosted Backend URL: https://potluck-planner1.herokuapp.com/, https://backend2-tawny.vercel.app/
 
 Endpoints that require an authorization token:
 
